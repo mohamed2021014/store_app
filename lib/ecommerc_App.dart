@@ -2,10 +2,14 @@ import 'package:ecommerce_app/core/Routes/app_routes.dart';
 import 'package:ecommerce_app/core/app/class/connnectinity.dart';
 import 'package:ecommerce_app/core/app/screen/no_network.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
+import 'package:ecommerce_app/logic/cubit/cart_cubit/cart_cubit.dart';
+import 'package:ecommerce_app/logic/cubit/fav_cubit.dart';
+
 import 'package:ecommerce_app/logic/cubit/langcubit.dart' show LanguageCubit;
 import 'package:ecommerce_app/logic/cubit/navigatecubit.dart';
 import 'package:ecommerce_app/logic/cubit/themecubit.dart';
 import 'package:ecommerce_app/presentation/page/home.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -25,6 +29,8 @@ class EcommerceApp extends StatelessWidget {
               BlocProvider(create: (context) => ThemeCubit()),
               BlocProvider(create: (context) => LanguageCubit()),
               BlocProvider(create: (context) => NavigationCubit()),
+              BlocProvider(create: (context) => CartCubit()),
+              BlocProvider(create: (context) => FavCubit()),
             ],
 
             child: ScreenUtilInit(

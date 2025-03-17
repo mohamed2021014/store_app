@@ -3,9 +3,7 @@ import 'package:ecommerce_app/core/constant/images_.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/presentation/widget/catocare_contanir.dart';
 import 'package:ecommerce_app/presentation/widget/grad_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ecommerce_app/presentation/widget/carcul_slide.dart';
 
@@ -43,10 +41,13 @@ class HomeScreen extends StatelessWidget {
                     image: AppImges.screen,
                     text: S.of(context).screens,
                   ),
-                  cardCatogris(
-                    context,
-                    image: AppImges.carcare,
-                    text: S.of(context).Car_Care,
+                  InkWell(
+                    onTap: () {},
+                    child: cardCatogris(
+                      context,
+                      image: AppImges.carcare,
+                      text: S.of(context).Car_Care,
+                    ),
                   ),
                 ],
               ),

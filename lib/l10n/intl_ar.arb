@@ -51,5 +51,11 @@
      "Car_Care" :"العناية بالسيارة" , 
      "screens":"الشاشات" , 
      "price":"السعر", 
-    "Product_details" :"تفاصيل المنتج"
+    "Product_details" :"تفاصيل المنتج" , 
+    "name":"الاسم", 
+    "description":"وصف", 
+    "add_to_cart":"أضف إلى السلة" , 
+    "pound" :"جنيه", 
+    "pay_now":"ادفع الآن" , 
+    "favorite_is_empty" :"المفضلة فارغة"
 }

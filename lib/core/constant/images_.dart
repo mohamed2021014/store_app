@@ -13,4 +13,5 @@ class AppImges {
   static const String sparParts = '$pathimg/saprparts.png';
   static const String screen = '$pathimg/screen.png';
   static const String carcare = '$pathimg/carcare.png';
+  static const String empityCart = '$pathimg/empty_cart.png';
 }

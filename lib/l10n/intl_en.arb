@@ -40,7 +40,7 @@
     "lang_code": "English" ,
     "home" : "home" , 
     "favorit":"favorit" , 
-    "card": "card" , 
+    "card": "cart" , 
     "profil":"profile" ,
     "nativication" :"Notifications" ,
     "Sections":"Sections" , 
@@ -50,7 +50,14 @@
     "Car_Care":"Car Care",
     "screens":"screens" , 
     "price":"price" , 
-    "Product_details" :"Product details"
+    "Product_details" :"Product details", 
+    "name":"name" ,
+    "description":"description", 
+    "add_to_cart":"add to cart" ,
+    "pound":"pound" ,  
+    "pay_now":"pay now", 
+    "favorite_is_empty" :"favorite is empty"
+
     
     
 

@@ -370,9 +370,9 @@ class S {
     return Intl.message('favorit', name: 'favorit', desc: '', args: []);
   }
 
-  /// `card`
+  /// `cart`
   String get card {
-    return Intl.message('card', name: 'card', desc: '', args: []);
+    return Intl.message('cart', name: 'card', desc: '', args: []);
   }
 
   /// `profile`
@@ -430,6 +430,41 @@ class S {
     return Intl.message(
       'Product details',
       name: 'Product_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `name`
+  String get name {
+    return Intl.message('name', name: 'name', desc: '', args: []);
+  }
+
+  /// `description`
+  String get description {
+    return Intl.message('description', name: 'description', desc: '', args: []);
+  }
+
+  /// `add to cart`
+  String get add_to_cart {
+    return Intl.message('add to cart', name: 'add_to_cart', desc: '', args: []);
+  }
+
+  /// `pound`
+  String get pound {
+    return Intl.message('pound', name: 'pound', desc: '', args: []);
+  }
+
+  /// `pay now`
+  String get pay_now {
+    return Intl.message('pay now', name: 'pay_now', desc: '', args: []);
+  }
+
+  /// `favorite is empty`
+  String get favorite_is_empty {
+    return Intl.message(
+      'favorite is empty',
+      name: 'favorite_is_empty',
       desc: '',
       args: [],
     );
