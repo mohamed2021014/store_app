@@ -25,12 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "Car_Care": MessageLookupByLibrary.simpleMessage("العناية بالسيارة"),
     "Creataccountp": MessageLookupByLibrary.simpleMessage("انشاء صفحه"),
     "Getstart": MessageLookupByLibrary.simpleMessage("تسجيل الدخول "),
-    "Loginwith": MessageLookupByLibrary.simpleMessage(
-      "تسجيل الدخول باستخدام جوجل",
-    ),
+    "Loginwith": MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام "),
     "Parts": MessageLookupByLibrary.simpleMessage("قطع غيار "),
     "Product_details": MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
     "Sections": MessageLookupByLibrary.simpleMessage("الاقسام"),
+    "Verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم التحقق بنجاح",
+    ),
     "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
     "application_features": MessageLookupByLibrary.simpleMessage(
       "مميزات التطبيق",
@@ -46,11 +47,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_products": MessageLookupByLibrary.simpleMessage(
       "اختر منتجاتك آلان",
     ),
+    "continuation": MessageLookupByLibrary.simpleMessage("استمرار"),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع اليلي"),
     "description": MessageLookupByLibrary.simpleMessage("وصف"),
     "donthaveanaccount": MessageLookupByLibrary.simpleMessage(" ليس لديك حساب"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الالكنروني"),
+    "email_verifi": MessageLookupByLibrary.simpleMessage(
+      "لقد تم إرسال رسالة التحقق الرجاء الذهاب إلى البريد الإلكتروني والضغط على اللينك",
+    ),
     "favorit": MessageLookupByLibrary.simpleMessage("المفضله"),
     "favorite_is_empty": MessageLookupByLibrary.simpleMessage("المفضلة فارغة"),
     "forgetpassword": MessageLookupByLibrary.simpleMessage("نسيت كلمه المرور"),
@@ -82,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pound": MessageLookupByLibrary.simpleMessage("جنيه"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "profil": MessageLookupByLibrary.simpleMessage("ملفي"),
+    "relode": MessageLookupByLibrary.simpleMessage("إعادة تحميل"),
     "screens": MessageLookupByLibrary.simpleMessage("الشاشات"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "sign_up": MessageLookupByLibrary.simpleMessage("آنشاء حساب"),

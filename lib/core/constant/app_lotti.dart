@@ -4,4 +4,5 @@ class AppLotti {
   static const String sinUp = '$kLotti/sinup.json';
   static const String home = "$kLotti/home2.json";
   static const String fav = "$kLotti/favorit.json";
+  static const String senmail = "$kLotti/sendmail.json";
 }

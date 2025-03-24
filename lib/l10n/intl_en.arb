@@ -6,7 +6,7 @@
     "password":"password" , 
     "Getstart": "Get Started " ,
     "forgetpassword": "fotget password?" ,
-    "Loginwith":"Login With Google" ,
+    "Loginwith":"<< or Login With >> " ,
     "donthaveanaccount":"Don't Have an account ? " ,
     "Creataccountp":"Creat account "  ,
     "language": "العربية", 
@@ -56,9 +56,14 @@
     "add_to_cart":"add to cart" ,
     "pound":"pound" ,  
     "pay_now":"pay now", 
-    "favorite_is_empty" :"favorite is empty"
+    "favorite_is_empty" :"favorite is empty" ,
+     "email_verifi":"The verification message has been sent, please go to the email and click on the link" ,
+     "relode":"relode" , 
+     "Verified_successfully":"Verified successfully" ,
+      "continuation" :"continuation"
 
-    
+
+              
     
 
 }

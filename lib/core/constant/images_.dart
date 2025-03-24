@@ -14,4 +14,6 @@ class AppImges {
   static const String screen = '$pathimg/screen.png';
   static const String carcare = '$pathimg/carcare.png';
   static const String empityCart = '$pathimg/empty_cart.png';
+  static const String facebok = '$pathimg/feecbok.png';
+  static const String google = '$pathimg/google-icon.png';
 }

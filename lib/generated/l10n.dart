@@ -100,10 +100,10 @@ class S {
     );
   }
 
-  /// `Login With Google`
+  /// `<< or Login With >> `
   String get Loginwith {
     return Intl.message(
-      'Login With Google',
+      '<< or Login With >> ',
       name: 'Loginwith',
       desc: '',
       args: [],
@@ -465,6 +465,41 @@ class S {
     return Intl.message(
       'favorite is empty',
       name: 'favorite_is_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The verification message has been sent, please go to the email and click on the link`
+  String get email_verifi {
+    return Intl.message(
+      'The verification message has been sent, please go to the email and click on the link',
+      name: 'email_verifi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `relode`
+  String get relode {
+    return Intl.message('relode', name: 'relode', desc: '', args: []);
+  }
+
+  /// `Verified successfully`
+  String get Verified_successfully {
+    return Intl.message(
+      'Verified successfully',
+      name: 'Verified_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `continuation`
+  String get continuation {
+    return Intl.message(
+      'continuation',
+      name: 'continuation',
       desc: '',
       args: [],
     );

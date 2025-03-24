@@ -4,12 +4,15 @@ import 'package:ecommerce_app/core/app/screen/no_network.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/logic/cubit/cart_cubit/cart_cubit.dart';
 import 'package:ecommerce_app/logic/cubit/fav_cubit.dart';
-
 import 'package:ecommerce_app/logic/cubit/langcubit.dart' show LanguageCubit;
+import 'package:ecommerce_app/logic/cubit/login_cubit/login_cubit.dart';
 import 'package:ecommerce_app/logic/cubit/navigatecubit.dart';
+import 'package:ecommerce_app/logic/cubit/rejester/rejester_cubit.dart';
 import 'package:ecommerce_app/logic/cubit/themecubit.dart';
+import 'package:ecommerce_app/presentation/page/auth/login.dart';
+import 'package:ecommerce_app/presentation/page/auth/onbording.dart';
 import 'package:ecommerce_app/presentation/page/home.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -31,6 +34,8 @@ class EcommerceApp extends StatelessWidget {
               BlocProvider(create: (context) => NavigationCubit()),
               BlocProvider(create: (context) => CartCubit()),
               BlocProvider(create: (context) => FavCubit()),
+              BlocProvider(create: (context) => LoginCubit()),
+              BlocProvider(create: (context) => RejesterCubit()),
             ],
 
             child: ScreenUtilInit(
@@ -56,8 +61,16 @@ class EcommerceApp extends StatelessWidget {
                         supportedLocales: S.delegate.supportedLocales,
                         //  roouts=============================================================
                         onGenerateRoute: AppRoutes().onGneratRouts,
+
                         //  initialRoute: AppRoutes.login,
-                        home: Home(),
+                        home:
+                            FirebaseAuth.instance.currentUser != null &&
+                                    FirebaseAuth
+                                        .instance
+                                        .currentUser!
+                                        .emailVerified
+                                ? Home()
+                                : Onbording(), // homewidgwt(),
                         theme: themeData,
 
                         builder: (context, fghjk) {
@@ -83,4 +96,18 @@ class EcommerceApp extends StatelessWidget {
       },
     );
   }
+}
+
+Widget homewidgwt() {
+  return StreamBuilder(
+    stream: FirebaseAuth.instance.authStateChanges(),
+    builder: (context, snapshot) {
+      if (snapshot.hasData &&
+          FirebaseAuth.instance.currentUser!.emailVerified) {
+        return Home();
+      } else {
+        return Login();
+      }
+    },
+  );
 }

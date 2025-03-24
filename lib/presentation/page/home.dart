@@ -1,7 +1,5 @@
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/logic/bloc/fatch_data_bloc/fatch_data_bloc.dart';
-import 'package:ecommerce_app/logic/cubit/cart_cubit/cart_cubit.dart';
-
 import 'package:ecommerce_app/logic/cubit/navigatecubit.dart';
 import 'package:ecommerce_app/presentation/page/cart_screen.dart';
 import 'package:ecommerce_app/presentation/page/favorit_screen.dart';

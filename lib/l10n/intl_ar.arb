@@ -6,7 +6,7 @@
     "password":"كلمه المرور" , 
     "Getstart": "تسجيل الدخول "  ,
     "forgetpassword": "نسيت كلمه المرور"  ,
-    "Loginwith":"تسجيل الدخول باستخدام جوجل" , 
+    "Loginwith":"تسجيل الدخول باستخدام " , 
     "donthaveanaccount":" ليس لديك حساب" ,
     "Creataccountp":"انشاء صفحه" , 
     "language": "English",
@@ -57,5 +57,10 @@
     "add_to_cart":"أضف إلى السلة" , 
     "pound" :"جنيه", 
     "pay_now":"ادفع الآن" , 
-    "favorite_is_empty" :"المفضلة فارغة"
+    "favorite_is_empty" :"المفضلة فارغة", 
+    "email_verifi" : "لقد تم إرسال رسالة التحقق الرجاء الذهاب إلى البريد الإلكتروني والضغط على اللينك", 
+    "relode":"إعادة تحميل" ,
+    "Verified_successfully":"تم التحقق بنجاح", 
+    "continuation" :"استمرار"
+
 }

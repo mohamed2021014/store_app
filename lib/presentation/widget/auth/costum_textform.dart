@@ -8,6 +8,7 @@ class CostemTextFiled extends StatelessWidget {
   String? Function(String?)? validator;
   TextInputType? keyboardType;
   bool obscureText = false;
+  TextEditingController? controller;
   CostemTextFiled({
     super.key,
     required this.hint,
@@ -16,10 +17,12 @@ class CostemTextFiled extends StatelessWidget {
     this.validator,
     this.keyboardType,
     required this.obscureText,
+    this.controller,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       style: Theme.of(context).textTheme.bodySmall,
       obscureText: obscureText,
       keyboardType: keyboardType,

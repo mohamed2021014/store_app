@@ -14,6 +14,7 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Hive.initFlutter();
   Hive.registerAdapter(CartItemAdapter());
   Hive.openBox<CartItem>(Strings.cartbox);
@@ -22,6 +23,7 @@ void main() async {
   await SharedPref().instantiatePreferences();
   await setUpingegtion();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await FirebaseAuth.instance.setLanguageCode("en");
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CustomButtomAuth extends StatelessWidget {
-  final String text;
+  final Widget text;
   final void Function()? onPressed;
   void Function()? onTap;
-  CustomButtomAuth({super.key, required this.text, this.onPressed, this.onTap});
+  final Widget widgett;
+  CustomButtomAuth({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.onTap,
+    required this.widgett,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +21,7 @@ class CustomButtomAuth extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
             colors: [
               const Color.fromARGB(255, 20, 104, 248),
@@ -31,17 +39,7 @@ class CustomButtomAuth extends StatelessWidget {
 
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                text,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
-              ),
-              Icon(Icons.arrow_right_alt_rounded, color: Colors.white),
-            ],
+            children: [text, widgett],
           ),
         ),
       ),

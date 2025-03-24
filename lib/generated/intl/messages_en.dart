@@ -25,10 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "Car_Care": MessageLookupByLibrary.simpleMessage("Car Care"),
     "Creataccountp": MessageLookupByLibrary.simpleMessage("Creat account "),
     "Getstart": MessageLookupByLibrary.simpleMessage("Get Started "),
-    "Loginwith": MessageLookupByLibrary.simpleMessage("Login With Google"),
+    "Loginwith": MessageLookupByLibrary.simpleMessage("<< or Login With >> "),
     "Parts": MessageLookupByLibrary.simpleMessage("Parts"),
     "Product_details": MessageLookupByLibrary.simpleMessage("Product details"),
     "Sections": MessageLookupByLibrary.simpleMessage("Sections"),
+    "Verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "Verified successfully",
+    ),
     "add_to_cart": MessageLookupByLibrary.simpleMessage("add to cart"),
     "application_features": MessageLookupByLibrary.simpleMessage(
       "Application Features",
@@ -44,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_products": MessageLookupByLibrary.simpleMessage(
       "Choose Your Products",
     ),
+    "continuation": MessageLookupByLibrary.simpleMessage("continuation"),
     "create_account": MessageLookupByLibrary.simpleMessage("Create account"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "description": MessageLookupByLibrary.simpleMessage("description"),
@@ -51,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t Have an account ? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email_verifi": MessageLookupByLibrary.simpleMessage(
+      "The verification message has been sent, please go to the email and click on the link",
+    ),
     "favorit": MessageLookupByLibrary.simpleMessage("favorit"),
     "favorite_is_empty": MessageLookupByLibrary.simpleMessage(
       "favorite is empty",
@@ -86,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pound": MessageLookupByLibrary.simpleMessage("pound"),
     "price": MessageLookupByLibrary.simpleMessage("price"),
     "profil": MessageLookupByLibrary.simpleMessage("profile"),
+    "relode": MessageLookupByLibrary.simpleMessage("relode"),
     "screens": MessageLookupByLibrary.simpleMessage("screens"),
     "search": MessageLookupByLibrary.simpleMessage("search"),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),

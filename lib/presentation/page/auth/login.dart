@@ -1,11 +1,15 @@
 import 'package:ecommerce_app/core/Routes/app_routes.dart';
 import 'package:ecommerce_app/core/animation/animation_do.dart';
 import 'package:ecommerce_app/core/constant/app_lotti.dart';
+
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/logic/cubit/langcubit.dart';
+import 'package:ecommerce_app/logic/cubit/login_cubit/login_cubit.dart';
 import 'package:ecommerce_app/logic/cubit/themecubit.dart';
 import 'package:ecommerce_app/presentation/widget/auth/costom_buttom.dart';
 import 'package:ecommerce_app/presentation/widget/auth/costum_textform.dart';
+import 'package:ecommerce_app/presentation/widget/custom_snacpar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -60,7 +64,7 @@ class Login extends StatelessWidget {
                     duration: 400,
                     child: Center(
                       child: SizedBox(
-                        height: 200,
+                        height: 150,
                         child: Lottie.asset(AppLotti.login),
                       ),
                     ),
@@ -85,37 +89,15 @@ class Login extends StatelessWidget {
                   SizedBox(height: 20),
                   CostomLogin(formk: formk),
 
-                  InkWell(
-                    onTap: () {
-                      // SharedPref().clearPreferences();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  S.of(context).Loginwith,
-                                  style: Theme.of(context).textTheme.bodySmall,
-                                ),
-                                Icon(
-                                  Icons.g_mobiledata_sharp,
-                                  color: Colors.amber,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Center(
+                  //   child: Text(
+                  //     S.of(context).Loginwith,
+                  //     style: Theme.of(context).textTheme.bodySmall,
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
+                  SizedBox(height: 159),
 
-                  //  Spacer(),
-                  // SizedBox(height: MediaQuery.of(context).size.height),
-                  SizedBox(height: 60),
                   CustomFadeInUp(
                     duration: 500,
                     child: Row(
@@ -130,7 +112,7 @@ class Login extends StatelessWidget {
                           onTap:
                               () => Navigator.of(
                                 context,
-                              ).pushReplacementNamed(AppRoutes.sinup),
+                              ).pushNamed(AppRoutes.sinup),
                           child: Text(
                             S.of(context).Creataccountp,
                             style: TextStyle(color: Colors.blueAccent),
@@ -161,76 +143,123 @@ class _CostomLoginState extends State<CostomLogin> {
   bool isbool = true;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomFadeInRight(
-          duration: 500,
-          child: CostemTextFiled(
-            obscureText: false,
-            keyboardType: TextInputType.emailAddress,
-            validator: (valuo) {
-              if (valuo == null ||
-                  valuo.isEmpty ||
-                  !RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(valuo)) {
-                return S.of(context).valid_email;
-              }
-              return null;
-            },
-            hint: S.of(context).email,
-            label: S.of(context).email,
-            icon: Icon(Icons.email_outlined),
-          ),
-        ),
-        SizedBox(height: 10),
-        CustomFadeInLeft(
-          duration: 500,
-          child: CostemTextFiled(
-            obscureText: isbool,
-            validator: (valuo) {
-              if (valuo == null || valuo.isEmpty || valuo.length < 8) {
-                return S.of(context).valid_passwrod;
-              }
-              return null;
-            },
-            hint: S.of(context).password,
-            label: S.of(context).password,
-            icon: InkWell(
-              onTap: () {
-                setState(() {
-                  isbool = !isbool;
-                });
-              },
-              child: Icon(Icons.visibility_off_outlined),
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
+    return BlocConsumer<LoginCubit, LoginState>(
+      listener: (context, state) {
+        if (state is LoginErrorState) {
+          showSnackbarMessage(context, state.messige, Colors.red);
+        } else if (state is LoginSucsessState) {
+          // showSnackbarMessage(context, "sucsess", Colors.red);
+        }
+      },
+      builder: (context, state) {
+        return Column(
+          children: [
+            CustomFadeInRight(
+              duration: 500,
+              child: CostemTextFiled(
+                controller: email, // context.read<AuthCubit>().email,
+                obscureText: false,
+                keyboardType: TextInputType.emailAddress,
+                validator: (valuo) {
+                  if (valuo == null ||
+                      valuo.isEmpty ||
+                      !RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(valuo)) {
+                    return S.of(context).valid_email;
+                  }
+                  return null;
+                },
+                hint: S.of(context).email,
+                label: S.of(context).email,
+                icon: Icon(Icons.email_outlined),
+              ),
             ),
-          ),
-        ),
-        SizedBox(height: 10),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: Text(
-            S.of(context).forgetpassword,
-            style: TextStyle(color: Colors.blue),
-          ),
-        ),
+            SizedBox(height: 10),
+            CustomFadeInLeft(
+              duration: 500,
+              child: CostemTextFiled(
+                controller: password, //context.read<AuthCubit>().password,
 
-        CustomFadeInRight(
-          duration: 500,
-          child: CustomButtomAuth(
-            onTap: () {
-              widget.formk.currentState!.validate();
-              ScaffoldMessenger.of(
-                context,
-              ).showSnackBar(SnackBar(content: Text('validat')));
-            },
-            text: S.of(context).Getstart,
-          ),
-        ),
-      ],
+                obscureText: context.read<LoginCubit>().isselcted,
+
+                validator: (valuo) {
+                  if (valuo == null || valuo.isEmpty || valuo.length < 8) {
+                    return S.of(context).valid_passwrod;
+                  }
+                  return null;
+                },
+                hint: S.of(context).password,
+                label: S.of(context).password,
+                icon: InkWell(
+                  onTap: () {
+                    context.read<LoginCubit>().changeobsucur();
+                    // setState(() {
+                    //   isbool = !isbool;
+                    // });
+                  },
+                  child: Icon(Icons.visibility_off_outlined),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: InkWell(
+                onTap: () {
+                  if (email.text.isEmpty) {
+                    showSnackbarMessage(
+                      context,
+                      "email is empty",
+
+                      Colors.black,
+                    );
+                  } else {
+                    FirebaseAuth.instance.sendPasswordResetEmail(
+                      email: email.text,
+                    );
+                  }
+                },
+                child:
+                    state is LoginLodingState
+                        ? CircularProgressIndicator()
+                        : Text(
+                          S.of(context).forgetpassword,
+                          style: TextStyle(color: Colors.blue),
+                        ),
+              ),
+            ),
+
+            CustomFadeInRight(
+              duration: 500,
+              child: CustomButtomAuth(
+                onTap: () async {
+                  if (widget.formk.currentState!.validate()) {
+                    context.read<LoginCubit>().siginMethoud(
+                      email.text,
+                      password.text,
+                      context,
+                    );
+                  }
+                },
+                text: Text(
+                  S.of(context).Getstart,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+                widgett: Icon(
+                  Icons.arrow_right_alt_rounded,
+                  color: Colors.white,
+                ),
+                //  text: S.of(context).Getstart,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
-
-//   Column Coustomlogin(BuildContext context) {
-//     return
-//   }
-// }
